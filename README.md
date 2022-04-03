@@ -1,6 +1,8 @@
-# Reddit Place Script 2022
+# Reddit Place Script 2022 for UCLA
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+# Thank you jc65536 (https://github.com/jc65536/) for helping with this version.
 
 **Message the bot channel on Discord if you have any questions regarding setup/errors.**
 
@@ -11,10 +13,10 @@ This is a script to draw a JPG onto r/place (<https://www.reddit.com/r/place/>).
 ## Requirements
 
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-    - Needed for the auto-pull image feature
-    - Run `git --version` in the terminal to check that you have it installed
+  - Needed for the auto-pull image feature
+  - Run `git --version` in the terminal to check that you have it installed
 - [Python 3](https://www.python.org/downloads/)
-    - Run `python3 --version` in the terminal to check that you have it installed
+  - Run `python3 --version` in the terminal to check that you have it installed
 - [A Reddit App Client ID and App Secret Key](https://www.reddit.com/prefs/apps)
 
 ## How to Get App Client ID and App Secret Key
@@ -32,15 +34,14 @@ If you don't want to create a development app for each account, you can add each
 ![Where you will find the app client ID and secret key](reddit-app-screenshot.png)
 
 ## Clone This Project!
+
 In your terminal, `cd` into any directory you like, then run
+
 ```
-git clone https://github.com/jc65536/reddit-place-script-2022.git
+git clone https://github.com/mparsakia/reddit-place-script-2022-UCLA.git
 ```
 
-Go into the project directory with cd:
-```
-cd reddit-place-script-2022
-```
+Then cd into the projects root directory.
 
 ## Python Package Requirements
 
@@ -66,12 +67,12 @@ pip3 install -r requirements.txt
 
 ## Get Started
 
-Make a copy of `.env_TEMPLATE` called `.env`, and place it in the project directory.
+Make a copy of `.env_TEMPLATE`, rename it to `.env`, and place it in the project directory.
 
 Put in the following contents:
 
 **Note:** The `ENV_DRAW_X_START` and `ENV_DRAW_Y_START` variables are already
-configured for the pan-UC flag. Do not change them.
+configured for the UCLA flag. Do not change them.
 
 ```text
 ENV_PLACE_USERNAME='["developer_username"]'
@@ -84,6 +85,20 @@ ENV_R_START='["0"]'
 ENV_C_START='["0"]'
 ```
 
+If you have multiple accounts (FOR UCLA):
+
+```text
+ENV_PLACE_USERNAME='["YOURUSERNAMEHERE", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted"]'
+ENV_PLACE_PASSWORD='["YOURPASSWORDHERE", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted"]'
+ENV_PLACE_APP_CLIENT_ID='["YOURCLIENTIDHERE", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted"]'
+ENV_PLACE_SECRET_KEY='["SECRETKEYHERE", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted", "redacted"]'
+ENV_DRAW_X_START="357"
+ENV_DRAW_Y_START="253"
+ENV_R_START='["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]'
+ENV_C_START='["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]'
+ENV_THREAD_DELAY='30'
+```
+
 - ENV_PLACE_USERNAME is an array of usernames of developer accounts
 - ENV_PLACE_PASSWORD is an array of the passwords of developer accounts
 - ENV_PLACE_APP_CLIENT_ID is an array of the client ids for the app / script registered with Reddit
@@ -93,7 +108,8 @@ ENV_C_START='["0"]'
 - ENV_R_START is an array which specifies which x position of the original image to start at while drawing it
 - ENV_C_START is an array which specifies which y position of the original image to start at while drawing it
 
-### Notes: 
+### Notes:
+
 - Multiple fields can be passed into the arrays to spawn a thread for each one.
 - Change image.png/.jpg to specify what image to draw. One pixel is drawn every 5 minutes
 - PNG has priority over JPG
