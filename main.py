@@ -171,7 +171,7 @@ def get_board(access_token_in):
                             "channel": {
                                 "teamOwner": "AFD2022",
                                 "category": "CANVAS",
-                                "tag": "1",
+                                "tag": "0",
                             }
                         }
                     },
