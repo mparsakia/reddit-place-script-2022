@@ -13,7 +13,6 @@ import argparse
 import sys
 import subprocess
 import sched
-import random
 from io import BytesIO
 from websocket import create_connection
 from requests.auth import HTTPBasicAuth
