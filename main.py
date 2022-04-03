@@ -57,7 +57,7 @@ def closest_color(target_rgb, rgb_colors_array_in):
 
 # method to draw a pixel at an x, y coordinate in r/place with a specific color
 def set_pixel_and_check_ratelimit(
-    access_token_in, x, y, color_index_in=18, canvas_index=1
+    access_token_in, x, y, color_index_in=18, canvas_index=0
 ):
     logging.info(
         f"Attempting to place {color_id_to_name(color_index_in)} pixel at {x}, {y}"
