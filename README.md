@@ -1,4 +1,5 @@
 # Reddit Place Script 2022 for UCLA
+
 https://discord.gg/dggcbhfU
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
@@ -134,6 +135,7 @@ ENV_DRAW_X_START="x_position_start_integer"
 ENV_DRAW_Y_START="y_position_start_integer"
 ENV_R_START='["0", "0"]'
 ENV_C_START='["0", "50"]'
+ENV_DELAY='60'
 ```
 
 The same pattern can be used for multiple drawing at once. Note that the "ENV_PLACE_USERNAME", "ENV_PLACE_PASSWORD", "ENV_PLACE_APP_CLIENT_ID", "ENV_PLACE_SECRET_KEY", "ENV_R_START", and "ENV_C_START" variables MUST be string arrays of the same size.
@@ -143,7 +145,10 @@ Also note that I did the following in the above example:
 ```text
 ENV_R_START='["0", "0"]'
 ENV_C_START='["0", "50"]'
+ENV_DELAY='60'
 ```
+
+- ENV_DELAY causes a bot to wait for a random amount of time between 0 seconds and the specified number of seconds before placing a tile.
 
 In this case, the first worker will start drawing from (0, 0) and the second worker will start drawing from (0, 50) from the input image.jpg file.
 

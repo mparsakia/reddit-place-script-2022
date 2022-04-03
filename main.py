@@ -121,7 +121,7 @@ def set_pixel_and_check_ratelimit(
     # code.interact(local=locals())
 
     # Reddit returns time in ms and we need seconds, so divide by 1000
-    return waitTime / 1000 + random.randint(0, 20)
+    return waitTime / 1000
 
 
 def get_board(access_token_in):
@@ -287,6 +287,11 @@ def load_image():
 
 # task to draw the input image
 def task(credentials_index):
+    random_delay = os.getenv("ENV_DELAY")
+    if random_delay is not None:
+        random_delay = int(random_delay)
+    else:
+        random_delay = 0
     # whether image should keep drawing itself
     repeat_forever = True
 
@@ -452,7 +457,7 @@ def task(credentials_index):
                     pixel_x_start + current_r,
                     pixel_y_start + current_c,
                     pixel_color_index,
-                )
+                ) + random.randint(0, random_delay)
 
                 current_r += 1
 
