@@ -15,6 +15,7 @@ color_map = {
     "#898D90": 29,  # grey
     "#D4D7D9": 30,  # light grey
     "#FFFFFF": 31,  # white
+    "#1B756F": 32,  # dark teal
 }
 
 # map of pixel color ids to verbose name (for debugging)
@@ -35,4 +36,5 @@ name_map = {
     29: "Grey",
     30: "Light Grey",
     31: "White",
+    32: "Dark Teal",
 }
